@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeFi Optimizer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Inria Serif font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inria+Serif:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+</head>
+<body>
+    <header>
+        <h1>DeFi Optimizer</h1>
+        <p>Save on crypto transactions with real-time data from top DeFi platforms</p>
+        <p class="updated-timestamp">
+            <i class="fas fa-sync-alt"></i> Prices updated: 
+        </p>
+    </header>
+    <main>
+        <div class="container">
+            <div class="card">
+                <h2><i class="fas fa-dollar-sign"></i> Transaction Details</h2>
+                <p>Enter your transaction details to find the most cost-effective DeFi platforms</p>
+                <form id="transaction-form">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="from-asset">From Asset</label>
+                            <select id="from-asset" name="from-asset">
+                            </select>
+                            <small id="from-price">Current price: --</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="to-asset">To Asset</label>
+                            <select id="to-asset" name="to-asset">
+                            </select>
+                            <small id="to-price">Current price: --</small>
+                        </div>
+                        <div class="form-group">
+                            <label for="amount">Amount</label>
+                            <input type="number" id="amount" name="amount" placeholder="200" step="any">
+                            <small id="amount-usd"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="current-platform">Current Platform (Optional)</label>
+                            <select id="current-platform" name="current-platform">
+                                <option value="">Select current platform</option>
+                                <option value="Uniswap">Uniswap</option>
+                                <option value="Sushiswap">Sushiswap</option>
+                                <option value="Pancakeswap">Pancakeswap</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit">Analyze Best Options</button>
+                </form>
+            </div>
+
+            <div id="results-container" class="card" style="display: none;">
+                <h2><i class="fas fa-chart-line"></i> Live Analysis Results</h2>
+                <p id="results-summary">— run an analysis to see routes —</p>
+                <p class="updated-timestamp"><i class="fas fa-sync-alt"></i> Updated: 21/06/2025, 20:26:07</p>
+                <table id="results-table">
+                    <thead>
+                        <tr>
+                            <th>Platform Name</th>
+                            <th>Fees</th>
+                            <th>Commissions</th>
+                            <th>Advantages</th>
+                            <th>Potential Savings</th>
+                            <th>Swap Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/choices.js/public/assets/scripts/choices.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
